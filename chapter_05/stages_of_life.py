@@ -1,4 +1,4 @@
-age = 20
+age = 99
 if age < 2:
     stage = "baby"
 elif age < 4:

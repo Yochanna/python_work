@@ -1,4 +1,4 @@
-sandwich_orders = ["tuna", "pastrami", "veggie", "pastrami", "chicken", "pastrami"]
+sandwich_orders = ["tuna", "veggie", "pastrami", "chicken"]
 print("Sorry, the deli has run out of pastrami.")
 while "pastrami" in sandwich_orders:
     sandwich_orders.remove("pastrami")

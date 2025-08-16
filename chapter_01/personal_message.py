@@ -1,2 +1,2 @@
-name = "Eric"
-print(f"Hello {name}, would you like to learn some Python today?")
+name = "Jimmy"
+print(f"Hello {name}, what are you doing later today?")
