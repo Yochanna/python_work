@@ -11,3 +11,10 @@ __pycache__/
 
 # Ignore logs
 *.log
+
+# Ignore game images (sprites, icons, etc.)
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
