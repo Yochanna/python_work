@@ -1,0 +1,13 @@
+﻿# Ignore Windows system files
+desktop.ini
+Thumbs.db
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+
+# Ignore VS Code settings
+.vscode/
+
+# Ignore logs
+*.log
