@@ -1,0 +1,21 @@
+﻿{
+  "type": "FeatureCollection",
+  "metadata": { "title": "USGS Sample  1 Day, M1+" },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "mag": 2.5, "title": "M 2.5 - Alaska" },
+      "geometry": { "type": "Point", "coordinates": [-149.9, 61.2, 10.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "mag": 3.1, "title": "M 3.1 - California" },
+      "geometry": { "type": "Point", "coordinates": [-121.5, 37.2, 8.0] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "mag": 4.0, "title": "M 4.0 - Japan" },
+      "geometry": { "type": "Point", "coordinates": [141.0, 38.2, 20.0] }
+    }
+  ]
+}

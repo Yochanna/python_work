@@ -1,0 +1,12 @@
+﻿{
+  "type": "FeatureCollection",
+  "metadata": { "title": "USGS Sample  30 Day, M1+" },
+  "features": [
+    { "type": "Feature",
+      "properties": { "mag": 6.1, "title": "M 6.1 - Indonesia" },
+      "geometry": { "type": "Point", "coordinates": [120.5, -2.6, 25.0] } },
+    { "type": "Feature",
+      "properties": { "mag": 4.2, "title": "M 4.2 - Turkey" },
+      "geometry": { "type": "Point", "coordinates": [35.2, 38.5, 10.0] } }
+  ]
+}
