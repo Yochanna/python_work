@@ -1,0 +1,27 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% block title %}Tutorial Portfolio CMS{% endblock %}</title>
+<link rel="stylesheet" href="/static/css/site.css">
+</head><body>
+<header class="site-header">
+  <h1><a href="{% url 'projects:list' %}">Tutorial Portfolio</a></h1>
+  <nav><a href="{% url 'projects:create' %}">+ New Project</a></nav>
+  <form method="get" action="{% url 'projects:list' %}" class="search-bar">
+    <input name="q" placeholder="Search title..." value="{{ request.GET.q }}">
+    
+<select name="status">
+  <option value="">Any status</option>
+  <option value="draft" {% if request.GET.status == 'draft' %}selected{% endif %}>Draft</option>
+  <option value="in_progress" {% if request.GET.status == 'in_progress' %}selected{% endif %}>In Progress</option>
+  <option value="published" {% if request.GET.status == 'published' %}selected{% endif %}>Published</option>
+  <option value="archived" {% if request.GET.status == 'archived' %}selected{% endif %}>Archived</option>
+</select>
+
+
+
+    <button type="submit">Filter</button>
+  </form>
+</header>
+<main class="container">{% block content %}{% endblock %}</main>
+<footer class="site-footer"><small>Demo CMS • Built with Django</small></footer>
+</body></html>

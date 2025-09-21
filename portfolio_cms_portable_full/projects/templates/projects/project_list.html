@@ -1,0 +1,22 @@
+{% extends "projects/base.html" %}
+{% block title %}Projects — Tutorial Portfolio CMS{% endblock %}
+{% block content %}
+<h2>Projects</h2>
+{% if object_list %}
+<ul class="card-grid">
+  {% for p in object_list %}
+  <li class="card">
+    <h3><a href="{% url 'projects:detail' p.pk %}">{{ p.title }}</a></h3>
+    <p class="muted">{{ p.get_status_display }} • {{ p.date_added|date:"Y-m-d" }}</p>
+    <p>{{ p.blurb|truncatechars:140 }}</p>
+    <div class="links">
+      {% if p.repo_url %}<a href="{{ p.repo_url }}" target="_blank" rel="noopener">Repo</a>{% endif %}
+      {% if p.demo_url %}<a href="{{ p.demo_url }}" target="_blank" rel="noopener">Demo</a>{% endif %}
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>No projects yet. <a href="{% url 'projects:create' %}">Create one</a>.</p>
+{% endif %}
+{% endblock %}
