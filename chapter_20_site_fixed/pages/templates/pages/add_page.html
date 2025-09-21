@@ -1,0 +1,7 @@
+<h1>Add a New Page</h1>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button name="submit">Save Page</button>
+</form>
+<p><a href="{% url 'pages:page_list' %}">Back to list</a></p>

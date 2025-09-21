@@ -1,0 +1,9 @@
+<h1>Page List</h1>
+<p><a href="{% url 'pages:add_page' %}">Add a new page</a></p>
+<ul>
+  {% for page in pages %}
+    <li>{{ page.title }} — {{ page.content }}</li>
+  {% empty %}
+    <li>No pages yet.</li>
+  {% endfor %}
+</ul>

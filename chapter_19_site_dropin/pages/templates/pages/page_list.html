@@ -1,0 +1,8 @@
+<h1>Page List</h1>
+<ul>
+  {% for page in pages %}                              <!-- [loop] -->
+    <li>{{ page.title }} — {{ page.content }}</li>     <!-- [fields] -->
+  {% empty %}
+    <li>No pages yet.</li>                             <!-- [empty] -->
+  {% endfor %}
+</ul>
