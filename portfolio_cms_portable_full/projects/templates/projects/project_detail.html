@@ -1,0 +1,25 @@
+{% extends "projects/base.html" %}
+{% block title %}{{ object.title }} — Tutorial Portfolio CMS{% endblock %}
+{% block content %}
+<article class="detail">
+<header><h2>{{ object.title }}</h2><p class="muted">{{ object.get_status_display }} • {{ object.date_added|date:"Y-m-d H:i" }}</p></header>
+{% if object.blurb %}<p>{{ object.blurb|linebreaks }}</p>{% endif %}
+<section class="links">
+  {% if object.repo_url %}<a href="{{ object.repo_url }}" target="_blank" rel="noopener">Repository</a>{% endif %}
+  {% if object.demo_url %}<a href="{{ object.demo_url }}" target="_blank" rel="noopener">Live Demo</a>{% endif %}
+</section>
+<section class="screens">
+<h3>Screenshots</h3>
+<div class="shot-grid">
+{% for s in object.screenshots.all %}
+  <figure>
+    {% if s.image_url %}<img src="{{ s.image_url }}" alt="{{ s.caption|default:'Screenshot' }}">{% endif %}
+    {% if s.caption %}<figcaption>{{ s.caption }}</figcaption>{% endif %}
+  </figure>
+{% empty %}<p>No screenshots yet.</p>{% endfor %}
+</div>
+<p><a href="{% url 'projects:shot_create' %}">+ Add screenshot</a></p>
+</section>
+<p class="actions"><a href="{% url 'projects:update' object.pk %}">Edit</a> • <a href="{% url 'projects:delete' object.pk %}">Delete</a> • <a href="{% url 'projects:list' %}">Back to list</a></p>
+</article>
+{% endblock %}
