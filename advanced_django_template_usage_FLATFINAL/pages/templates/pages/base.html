@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ site_name }}{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'pages/css/site.css' %}">
+</head>
+<body>
+  {% include 'partials/_nav.html' %}
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+  <footer><small>&copy; {{ site_name }} — {{ support_email }}</small></footer>
+</body>
+</html>

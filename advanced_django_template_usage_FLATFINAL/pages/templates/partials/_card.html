@@ -1,0 +1,6 @@
+<div class="card">
+  <h3>{{ item.title|title }}</h3>
+  <p>Published: {{ item.published|date:"Y-m-d H:i" }}</p>
+  <p>Price: {{ item.price|currency }}</p>
+  <a href="{% url 'article_detail' item.slug %}">Read more</a>
+</div>

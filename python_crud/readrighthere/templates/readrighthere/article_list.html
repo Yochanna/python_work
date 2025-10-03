@@ -1,0 +1,27 @@
+{% extends 'readrighthere/base.html' %}
+{% block content %}
+<h2>Articles</h2>
+<form method="get">
+  <input type="text" name="q" value="{{ search_query }}" placeholder="Search...">
+  <button type="submit">Search</button>
+</form>
+<ul>
+{% for article in page_obj %}
+  <li>
+    <a href="{% url 'article_detail' article.pk %}">{{ article.title }}</a>
+  </li>
+{% empty %}
+  <li>No articles found.</li>
+{% endfor %}
+</ul>
+
+<div>
+    {% if page_obj.has_previous %}
+      <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+    {% endif %}
+    <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+    {% if page_obj.has_next %}
+      <a href="?page={{ page_obj.next_page_number }}">Next</a>
+    {% endif %}
+</div>
+{% endblock %}

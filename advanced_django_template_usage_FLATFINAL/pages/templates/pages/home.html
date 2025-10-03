@@ -1,0 +1,12 @@
+{% extends 'pages/base.html' %}
+{% load custom_filters %}
+{% block content %}
+  <h1>{{ lead|shout }}</h1>
+  <section class="grid">
+    {% for a in articles %}
+      {% include 'partials/_card.html' with item=a %}
+    {% empty %}
+      <p>No articles yet.</p>
+    {% endfor %}
+  </section>
+{% endblock %}

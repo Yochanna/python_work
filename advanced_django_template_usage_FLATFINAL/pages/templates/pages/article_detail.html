@@ -1,0 +1,11 @@
+{% extends 'pages/base.html' %}
+{% load custom_filters %}
+{% block content %}
+  {% if article %}
+    <h1>{{ article.title }}</h1>
+    <p><strong>Published:</strong> {{ article.published|date:"j M Y" }}</p>
+    <p><strong>Price:</strong> {{ article.price|currency }}</p>
+  {% else %}
+    <p>Article not found.</p>
+  {% endif %}
+{% endblock %}

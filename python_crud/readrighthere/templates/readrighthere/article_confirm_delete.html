@@ -1,0 +1,8 @@
+{% extends 'readrighthere/base.html' %}
+{% block content %}
+<h2>Delete "{{ article.title }}"?</h2>
+<form method="post">{% csrf_token %}
+  <button type="submit" class="btn btn-danger">Yes, Delete</button>
+  <a href="{% url 'article_detail' article.pk %}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}

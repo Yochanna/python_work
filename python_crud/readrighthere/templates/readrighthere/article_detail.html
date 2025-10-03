@@ -1,0 +1,7 @@
+{% extends 'readrighthere/base.html' %}
+{% block content %}
+<h2>{{ article.title }}</h2>
+<p>{{ article.content }}</p>
+<a href="{% url 'article_update' article.pk %}" class="btn btn-warning">Edit</a>
+<a href="{% url 'article_delete' article.pk %}" class="btn btn-danger">Delete</a>
+{% endblock %}
