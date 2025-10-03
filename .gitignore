@@ -1,30 +1,10 @@
-﻿# Ignore Windows system files
-desktop.ini
-Thumbs.db
-
-# Ignore Python cache files
+# Python
 __pycache__/
 *.pyc
 
-# Ignore VS Code settings
-.vscode/
-
-# Ignore logs
-*.log
-
-# Ignore game images (sprites, icons, etc.)
-*.png
-*.jpg
-*.jpeg
-*.gif
-*.bmp
-
-# Ignore virtual environment
+# Virtual env
 .venv/
 
-# Ignore Django database
-db.sqlite3
-
-# Ignore Python cache
-__pycache__/
-*.pyc
+# OS
+.DS_Store
+Thumbs.db
